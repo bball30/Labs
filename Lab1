@@ -22,6 +22,7 @@ public class Main {
                 else {b[i][j] = Math.exp(Math.pow(Math.asin(Math.exp(-Math.abs(x[j]))/2.0), 2));}
                 System.out.printf("%.3f ", b[i][j]);
             }
+            System.out.println()
         }
     }
 }
