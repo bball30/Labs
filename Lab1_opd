@@ -1,0 +1,112 @@
+#!/bin/bash
+#1
+mkdir Lab0
+cd Lab0
+mkdir cottonee3
+cd cottonee3
+echo "Развитые способности  Unnerve" > vespiquen
+mkdir gabite
+mkdir combee
+cd ..
+echo -e "satk=6 sdef=7 \nspd=10" > haxorus1
+echo "Тип диеты  Omnivore" > kadabra1
+echo -e "Ходы  Ancientpower Bind \nBlock Body Slam Dragon Pulse Earth Power Iron Head Iron Tail Mud-Slap \nSleep Talk Snore Stealth Rock Twister" > onix7
+mkdir scizor1
+cd scizor1
+mkdir stunky
+mkdir hippopotas
+mkdir electrike
+cd ..
+mkdir tranquill1
+cd tranquill1
+mkdir togepi
+mkdir simisear
+echo -e "Возможности  Overland=6 \nSurface=2 Jump=2 Power=1 Intelligence=3" > skorupi
+mkdir bonsly
+echo -e "Развитые способности \nStorm Drain" > cradily
+mkdir shellos
+cd ..
+#2
+chmod 777 cottonee3
+cd cottonee3
+chmod 004 vespiquen
+chmod 511 gabite
+chmod u=wx,g=rwx,o=rx combee
+cd ..
+chmod 046 haxorus1
+chmod 640 kadabra1
+chmod a=r onix7
+chmod 315 scizor1
+cd scizor1
+chmod 752 stunky
+chmod a=rwx,g-r hippopotas
+chmod a=rwx electrike
+cd ..
+chmod 330 tranquill1
+cd tranquill1
+chmod 777 togepi
+chmod 335 simisear
+chmod 600 skorupi
+chmod 570 bonsly
+chmod 664 cradily
+chmod 312 shellos
+cd ..
+#3
+cat tranquill1/skorupi tranquill1/cradily >> haxorus1_25
+#добавим права на чтение файла haxorus1, чтобы можно было
+#создать символическую ссылку на него и скопировать его содержимое
+chmod u+r haxorus1
+ln -s haxorus1 tranquill1/cradilyhaxorus
+cp haxorus1 cottonee3/vespiquenhaxorus
+#теперь вернем прежние права на файл haxorus1
+chmod u-r haxorus1
+cp onix7 scizor1/stunky
+ln -s scizor1 Copy_89
+#добавим права на чтение для файлов, у которых их не было
+#для того, чтобы скопировать рекурсивно директорию
+chmod u+r cottonee3/combee cottonee3/vespiquen
+cp -r cottonee3 scizor1/hippopotas
+#возвращаем прежние права
+chmod u-r cottonee3/combee cottonee3/vespiquen
+#ln haxorus1 cottonee3/vespiquenhaxorus
+#эта команда не выполнится, так как в одной и той же директории
+#нельзя создавать жесткие ссылки с одинаковыми именами 
+#поэтому создадим жесткую ссылку с другим именем
+ln haxorus1 cottonee3/vespiquenhaxoruss
+#4
+wc -c cottonee3/vespiquen tranquill1/skorupi>/tmp/ex1 2>&1
+
+ls -lt cottonee3
+
+(cat *1 */*1 | sort) 2>&1
+chmod u+r haxorus1
+(cat *1 */*1 | sort) 2>&1
+chmod u-r haxorus1
+
+chmod u+rw haxorus1
+wc -l haxorus1>>haxorus1
+chmod u-rw haxorus1
+
+echo "nfvi qu dvdv">testing5
+echo "qu">testing5_1
+echo -e "vfdvf \nqu">testing_2
+echo "vfdvfbgbgfb">testing_3
+echo -e "vfvfdv fdv \nqu">cottonee3/testing_4
+ls -lR `grep -l "^qu$" * */* */*/*` 2>&1 | sort | head -3
+rm testing* */testing*
+
+chmod u+r tranquill1
+echo "nfvbfvbde">tranquill1/testing6_1
+echo "ndcndiucb">tranquill1/testing6_2
+cat -n tranquill1/* 2>/dev/null | grep 'e$'
+rm tranquill1/testing*
+chmod u-r tranquill1
+#5
+rm kadabra1
+#добавим права на чтение директории tranquill1 для выполнения пунка 3, 4
+chmod u+r tranquill1
+rm tranquill1/skorupi
+rm -f tranquill1/cradilyhaxor*
+rm -f cottonee3/vespiquenhaxor*
+rmdir tranquill1/togepi
+rm -r tranquill1
